@@ -12,145 +12,60 @@
 //    Console.WriteLine(res);
 
 
+Console.Write("Введите размер первого массива: ");
+var n1 = Convert.ToInt32(Console.ReadLine());
+string[] mas1 = new string[n1];
 
-
-#region Матрица в дабл
-//class matrix
-//{
-//    int size;
-//    double[,] arr;
-
-//    public matrix(double[,] a, int n)
-//    {
-//        arr = a;
-//        size = n;
-//    }
-
-//    public void swap()
-//    {
-//        double tmp;
-//        for (int i = 0; i < size; i++)
-//        {
-//            for (int j = 0; j < i; j++)
-//            {
-//                tmp = arr[i, j];
-//                arr[i, j] = arr[j, i];
-//                arr[j, i] = tmp;
-//            }
-//        }
-//    }
-
-//    public void print()
-//    {
-//        for (int i = 0; i < size; i++)
-//        {
-//            for (int j = 0; j < size; j++)
-//                Console.Write(arr[i, j] + " ");
-//            Console.WriteLine();
-//        }
-//    }
-//}
-
-//class program
-//{
-//    public static void Main()
-//    {
-//        Console.Write("Введите размер матрицы: ");
-//        int size = Convert.ToInt32(Console.ReadLine());
-//        double[,] arr = new double[size, size];
-//        Console.WriteLine("Заполните матрицу: ");
-
-//        for (int i = 0; i < size; i++)
-//        {
-//            string[] str_arr = (Console.ReadLine()).Split(' ');
-//            for (int j = 0; j < size; j++)
-//                arr[i, j] = Convert.ToDouble(str_arr[j]);
-//        }
-//        matrix ob = new matrix(arr, size);
-
-//        Console.WriteLine("\nИсходная матрица: ");
-
-//        ob.print();
-
-//        Console.WriteLine("\nТранспонированная матрица: ");
-//        ob.swap();
-//        ob.print();
-//    }
-//}
-
-#endregion
-
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace proga
+Console.WriteLine("Введите имена для первого массива:");
+for (int i = 0;i< mas1.Length;i++)
 {
-    class Program
+    Console.Write($"mas1[{i}] = ");
+    mas1[i] = Console.ReadLine();
+}
+
+Console.Write("Введите размер второго массива: ");
+var n2 = Convert.ToInt32(Console.ReadLine());
+string[] mas2 = new string[n2];
+
+Console.WriteLine("Введите имена для второго массива:");
+for (int i = 0; i < mas2.Length; i++)
+{
+    Console.Write($"mas2[{i}] = ");
+    mas2[i] = Console.ReadLine();
+}
+
+var n3 = n1 + n2;
+string[] result = new string[n3];
+
+for (var i = 0; i < mas1.Length; i++)
+{
+    result[i] = mas1[i];
+
+    for (var j = mas1.Length; j < result.Length; j++)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Введите размерность матрицы (nxn)");
-            int n = Convert.ToInt16(Console.ReadLine());
-            int[,] B = new int[n, n];
-            Random rnd = new Random();
-            Console.WriteLine("Исходная матрица:");
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    B[i, j] = rnd.Next(-10, 10);
-                    Console.Write("{0, 4}", B[i, j]);
-                }
-                Console.WriteLine();
-            }
-            Console.ReadLine();
-
-            int[] res1 = new int[n];  //массив для хранения сумм строк
-            int summ1 = 0;
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    summ1 += B[i, j];   //суммируем элементы строки
-                }
-                res1[i] = summ1; //пишем сумму в массив
-                summ1 = 0; //обнуляем переменную
-            }
-
-            int max = 0;    //индекс строки с максимальной суммой
-            for (int j = 1; j < n; j++)
-            {
-                if (res1[j] > res1[max])   //если есть строка с суммой больше, то пишем в max её индекс
-                    max = j;
-            }
-            Console.WriteLine("Номер строки с максимальной суммой элементов: " + max);
-            Console.ReadLine();
-
-            int[] res2 = new int[n];   //то же самое, только для столбцов
-            int summ2 = 0;
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    summ2 += B[j, i];  // индексы меняем местами, чтобы просматривались не строки, а столбцы.
-                }
-                res2[i] = summ2;
-                summ2 = 0;
-            }
-
-            int min = 0;
-            for (int j = 1; j < n; j++)
-            {
-                if (res2[j] < res1[min])
-                    min = j;
-            }
-
-            Console.WriteLine("Номер столбца с минимальной суммой элементов: " + min);
-            Console.ReadLine();
-
-        }
+        result[j] = mas2[j - mas1.Length];
+        if (result[i] == result[j])
+            result[j] = null;
     }
 }
+//foreach (string s in result)
+//            if (s == result[i] && s == result[j])
+//                result[j] = null;
+
+foreach (string s in result)
+    Console.Write($"{s}, ");
+
+
+
+
+
+
+
+
+//foreach (string m1 in mas1)
+//    Console.Write($"{m1}  ");
+//Console.WriteLine("");
+//foreach (string m2 in mas2)
+//    Console.Write($"{m2}  ");
+
+
