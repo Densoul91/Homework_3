@@ -30,8 +30,12 @@ for (var i = 0; i < mas1.Length; i++)
         result[j] = mas2[j - mas1.Length];
 }
 
+string[] res = result.Distinct().ToArray();
 
-foreach (string s in result)
+
+
+
+foreach (string s in res)
     Console.Write($"{s}, ");
 
 
