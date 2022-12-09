@@ -1,4 +1,6 @@
-﻿Console.Write("Введите размер первого массива: ");
+﻿#region Homework 3-1
+
+Console.Write("Введите размер первого массива: ");
 var n1 = Convert.ToInt32(Console.ReadLine());
 string[] mas1 = new string[n1];
 
@@ -32,23 +34,8 @@ for (var i = 0; i < mas1.Length; i++)
 
 string[] res = result.Distinct().ToArray();
 
-
-
-
 foreach (string s in res)
     Console.Write($"{s}, ");
-
-
-
-
-
-
-
-
-//foreach (string m1 in mas1)
-//    Console.Write($"{m1}  ");
-//Console.WriteLine("");
-//foreach (string m2 in mas2)
-//    Console.Write($"{m2}  ");
+#endregion
 
 
