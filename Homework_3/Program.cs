@@ -1,18 +1,4 @@
-﻿
-//string[] names = { "Василий", "Петр", "Денис", "Николай", "Дмитрий", "Александр", "Евгений" };
-//string[] names2 = { "Николай", "Константин", "Денис", "Денис", "Максим", "Андрей", "Алексей" };
-//string[] result = new string[7];
-//for (int index = 0; index < result.Length; index++)
-//{
-//    if (names[index] == names2[index])
-//        continue;
-//    result[index] = names[index] + "  " + names2[index];
-//}
-//foreach (var res in result)
-//    Console.WriteLine(res);
-
-
-Console.Write("Введите размер первого массива: ");
+﻿Console.Write("Введите размер первого массива: ");
 var n1 = Convert.ToInt32(Console.ReadLine());
 string[] mas1 = new string[n1];
 
@@ -40,17 +26,10 @@ string[] result = new string[n3];
 for (var i = 0; i < mas1.Length; i++)
 {
     result[i] = mas1[i];
-
     for (var j = mas1.Length; j < result.Length; j++)
-    {
         result[j] = mas2[j - mas1.Length];
-        if (result[i] == result[j])
-            result[j] = null;
-    }
 }
-//foreach (string s in result)
-//            if (s == result[i] && s == result[j])
-//                result[j] = null;
+
 
 foreach (string s in result)
     Console.Write($"{s}, ");
