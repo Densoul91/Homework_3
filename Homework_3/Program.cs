@@ -34,12 +34,9 @@ for (var i = 0; i < mas1.Length; i++)
     for (var j = mas1.Length; j < result.Length; j++)
         result[j] = mas2[j - mas1.Length];
 }
-#endregion
-
-
 //string[] res = result.Distinct().ToArray();
 
-
+#endregion
 
 
 string[] res= new string[n3];
@@ -69,9 +66,6 @@ for (int i =0; i<n3;i++)
 }
 
 
-
-
-//if(f>=1) 
     foreach (string s in result)
         Console.Write($"{s}, ");
 
