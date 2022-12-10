@@ -71,13 +71,7 @@ for (int i =0; i<n3;i++)
 
 
 
-
-
-
-
-
-
-
+//if(f>=1) 
     foreach (string s in result)
         Console.Write($"{s}, ");
 
