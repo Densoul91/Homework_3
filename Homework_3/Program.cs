@@ -41,37 +41,8 @@ for (var i = 0; i < mas1.Length; i++)
 
 
 
-//int numCopy = 0; 
-//int prevIndex = 0;
-
-//for (int i = 0; i < result.Length; i++)
-//{
-//    bool foundCopy = false;
-//    for (int j = 0; j < i; j++)
-//    {
-//        if (result[i] == result[j])
-//        {
-//            foundCopy = true;
-//            numCopy++; // Increment means Count for Duplicate found in array.
-//            break;
-//        }
-//    }
-
-//    if (foundCopy == false)
-//    {
-//        result[prevIndex] = result[i];
-//        prevIndex++;
-//    }
-//}
-
-//// Just Duplicate records replce by zero.
-//for (int k = 1; k <= numCopy; k++)
-//{
-//    result[result.Length - k] = "\0";
-//}
 
 string[] res= new string[n3];
-int f = 0;
 int k = 1;
 for (int i =0; i<n3;i++)
 {
@@ -88,7 +59,6 @@ for (int i =0; i<n3;i++)
             //break;
             //}
            // n3--;
-            //f = 1;
         }
         else
         {
@@ -108,8 +78,6 @@ for (int i =0; i<n3;i++)
 
 
 
-//if(f>=1) 
     foreach (string s in result)
         Console.Write($"{s}, ");
-//
 
